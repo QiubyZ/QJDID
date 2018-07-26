@@ -80,8 +80,8 @@ def ops():
                 flood(no).nangid(jumlah)
      
             elif opsi == 2:
-                #files = raw_input("Masukkan file path *.txt: ")
-                files = "/storage/emulated/0/a/video/no.txt"
+                files = raw_input("Masukkan file path *.txt: ")
+                #files = "/storage/emulated/0/a/video/no.txt"
                 print G+"[+] --- [ MENU MULTI TARGET ] --- [+]"+W
                 print "[1] SEND KEBANYAK\n[2] FLOOD KEBANYAK"
                 print G+"[+] ----------------------------- [+]"+W
