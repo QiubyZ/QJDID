@@ -39,10 +39,10 @@ class Bomsms(object):
     def __init__(self, msisdn):
         self.kirim = requests.session()
         self.msisdn = msisdn
-        if self.msisdn[0] == "+":
-            self.msisdn = msisdn.replace("+","")
-        elif self.msisdn[0] == "0":
-            self.msisdn = msisdn[0].replace("0","62") + msisdn[1::]
+   #     if self.msisdn[0] == "+":
+  #          self.msisdn = msisdn.replace("+","")
+  #      elif self.msisdn[0] == "0":
+#            self.msisdn = msisdn[0].replace("0","62") + msisdn[1::]
         self.url = "http://sc.jd.id/phone/sendPhoneSms"
         self.data = {"phone":msisdn,
                      "smsType":"1"}
