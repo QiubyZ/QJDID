@@ -11,7 +11,6 @@ Spam sms alloperator dengan limmit 120 mempunyai fitur antara lain:
 2. Send ke banyak nomor (kirim kebanyak)
 3. Spam semua Nomor
 
-![screenshot_2018-07-26-13-00-58-685_org qpython qpy](https://user-images.githubusercontent.com/41333888/43242611-3d5eaedc-90cc-11e8-9eb3-c2b1586d83ad.png)
 
 ## INSTALLATION
 
@@ -22,4 +21,5 @@ Spam sms alloperator dengan limmit 120 mempunyai fitur antara lain:
 5. cd QJDID
 6. python2 qjdid.py
 
+![screenshot_2018-07-26-13-00-58-685_org qpython qpy](https://user-images.githubusercontent.com/41333888/43242611-3d5eaedc-90cc-11e8-9eb3-c2b1586d83ad.png)
 
